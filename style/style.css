@@ -1,5 +1,91 @@
 *{
     margin: 0;
-    text-decoration: none;
+    padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+}
+:root{
+    --heading: 39px;
+    --heading-2: 31px;
+    --heading-3:25px;
+    --body-text: 16px;
+    --accent: 13px;
+    --dark: #893318;
+    --primary: #FE6E0B;
+    --secondary: #FEA75D;
+}
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: white;
+}
+.header-section{
+    width: 95%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.header-section .text-holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--dark);
+    animation: myAnim 2s ease 0s 1 normal none;
+    width: 25%;
+}
+.header-section .text-holder h1{
+    font-size: 88px;
+}
+.header-section .text-holder p{
+    font-size: var(--heading);
+}
+.img-holder{
+    background-image: url(../src/Hero\ Section.png);
+    width: 70%;
+    height: calc(100vh - 100px);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    padding: 20px 25px;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+}
+.img-holder ul li{
+    margin-bottom: 20px;
+}
+.img-holder ul li a{
+    color: white;
+    font-size: var(--body-text);
+    position: relative;
+}
+.img-holder ul li a::after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: -4px;
+    background: white;
+    margin: 0 auto;
+	left: 0;
+	width: 0%;
+}
+.img-holder ul li a:hover::after{
+    width: 80%;
+    transition: 0.2s;
 }
